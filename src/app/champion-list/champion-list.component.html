@@ -1,5 +1,14 @@
 <ul>
   <li *ngFor="let champion of champions">
     {{ champion.name }}
+    <p>
+      <img
+        [src]="
+          'http://ddragon.leagueoflegends.com/cdn/12.2.1/img/champion/' +
+          champion.image.full
+        "
+        alt=""
+      />
+    </p>
   </li>
 </ul>
