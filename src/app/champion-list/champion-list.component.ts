@@ -1,4 +1,6 @@
+import { ChampionService } from './champion.service';
 import { Component, OnInit } from '@angular/core';
+import { Champion } from './champion';
 
 @Component({
   selector: 'app-champion-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampionListComponent implements OnInit {
 
-  constructor() { }
+  champions: Champion[];
+
+  constructor(private championService: ChampionService) { }
 
   ngOnInit() {
+    this.championService.getChampions().then(champions => this.champions = champions);
   }
 
 }
