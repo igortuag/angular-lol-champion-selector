@@ -1,3 +1,12 @@
-<p>
-  champion-detail works!
-</p>
+<div *ngIf="champion">
+  <h1>title: {{ champion.title }}</h1>
+  <p>name: {{ champion.name }}</p>
+  <img
+    [src]="
+      'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' +
+      champion.name +
+      '_0.jpg'
+    "
+    alt=""
+  />
+</div>
