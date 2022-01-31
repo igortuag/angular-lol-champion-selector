@@ -1,6 +1,6 @@
-<div *ngIf="champion">
-  <h1>title: {{ champion.title }}</h1>
-  <p>name: {{ champion.name }}</p>
+<div *ngIf="champion" class="container">
+  <h1>{{ champion.title }}</h1>
+  <p>{{ champion.name }}</p>
   <img
     [src]="
       'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' +
