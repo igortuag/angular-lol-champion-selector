@@ -1,0 +1,12 @@
+<div *ngIf="champion" class="container">
+  <h1>{{ champion.title }}</h1>
+  <p>{{ champion.name }}</p>
+  <img
+    [src]="
+      'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' +
+      champion.name +
+      '_0.jpg'
+    "
+    alt=""
+  />
+</div>

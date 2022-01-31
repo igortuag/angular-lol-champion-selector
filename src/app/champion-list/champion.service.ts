@@ -5,7 +5,7 @@ import { Headers, Http } from '@angular/http';
 @Injectable()
 export class ChampionService {
 
-  private uri = 'http://ddragon.leagueoflegends.com/cdn/12.2.1/data/en_US/champion.json';
+  private uri = 'http://ddragon.leagueoflegends.com/cdn/12.2.1/data/en_US';
 
 
   constructor(
@@ -13,9 +13,16 @@ export class ChampionService {
   ) { }
 
   getChampions() {
-    return this.http.get(this.uri).toPromise().then(response => {
+    return this.http.get(`${this.uri}/champion.json`).toPromise().then(response => {
       const data = response.json().data;
       return Object.keys(data).map(key => data[key]) as Champion[];
+    }).catch(this.handleError);
+  }
+
+  getChampion(id: string) {
+    return this.http.get(`${this.uri}/champion/${id}.json`).toPromise().then(response => {
+      const data = response.json().data;
+      return data[id] as Champion;
     }).catch(this.handleError);
   }
 
