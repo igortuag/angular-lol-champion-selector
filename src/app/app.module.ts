@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app.routing';
 import { ChampionService } from './champion-list/champion.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { ChampionDetailComponent } from './champion-detail/champion-detail.compo
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [ChampionService],
   bootstrap: [AppComponent]
